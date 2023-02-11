@@ -62,7 +62,7 @@
             "applicationIdentifier": "com.burninglab.actionspipeline",
             "androidBundleVersionCode": 1,
             "androidMinimumSdkVersion": 0,
-            "androidTargetSdkVersion": 22
+            "androidTargetSdkVersion": 0
         }
     ]
 }
