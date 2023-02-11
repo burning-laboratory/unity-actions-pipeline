@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using BurningLab.ActionsPipeline;
 using UnityEngine;
 
-public class AppLoaader : MonoBehaviour
+public class AppLoader : MonoBehaviour
 {
     [SerializeField] private ActionsPipeline _loadingPipeline;
     

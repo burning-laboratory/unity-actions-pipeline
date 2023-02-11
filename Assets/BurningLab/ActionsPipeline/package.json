@@ -9,7 +9,7 @@
   "licensesUrl": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/burning-laboratory/unity-actions-pipeline"
   },
   "keywords": [
     "Unity", "Actions", "Pipeline"

@@ -207,3 +207,89 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1525510190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525510192}
+  - component: {fileID: 1525510191}
+  m_Layer: 0
+  m_Name: App Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1525510191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525510190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4634affc7d06f489732a40ac0f0e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadingPipeline:
+    _pipelineStages:
+    - rid: 8033985479233765384
+    - rid: 8033985479233765381
+    - rid: 8033985479233765382
+    - rid: 8033985479233765383
+    - rid: 8033985479233765385
+    - rid: 8033985479233765386
+  references:
+    version: 2
+    RefIds:
+    - rid: 8033985479233765381
+      type: {class: LoadSceneActionsPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Load database scene
+        _sceneName: Database
+    - rid: 8033985479233765382
+      type: {class: LoadSceneActionsPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Load main scene
+        _sceneName: Main
+    - rid: 8033985479233765383
+      type: {class: MarkSceneAsActiveActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Mark main scene as active
+        _sceneNameToMarkAsActive: Main
+    - rid: 8033985479233765384
+      type: {class: MarkGameObjectAsDontDestroyOnLoadActionsPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Dont destroy app loader
+        _targetGameObject: {fileID: 1525510190}
+    - rid: 8033985479233765385
+      type: {class: MoveGameObjectToSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Move Main Camera to main scene
+        _gameObject: {fileID: 114490505}
+        _targetSceneName: Main
+    - rid: 8033985479233765386
+      type: {class: UnloadSceneActionsPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Unload app preloader scene
+        _sceneNameToUnload: App Preloader
+--- !u!4 &1525510192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525510190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0033696, y: 0.06942459, z: -10.94992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
