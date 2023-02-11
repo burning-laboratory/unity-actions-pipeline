@@ -1,8 +1,8 @@
 ﻿{
-  "name": "com.burning-lab.packagename",
+  "name": "com.burning-lab.actionspipeline",
   "version": "0.0.1",
-  "displayName": "Package Display Name",
-  "description": "Package description",
+  "displayName": "Actions Pipeline Engine",
+  "description": "",
   "unity": "2021.3",
   "documentationUrl": "",
   "changelogUrl": "",
@@ -12,7 +12,7 @@
     "url": ""
   },
   "keywords": [
-
+    "Unity", "Actions", "Pipeline"
   ],
   "scripts": {
     "build": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/ReadmeBuilder.js",
@@ -23,6 +23,9 @@
     "restore-dependencies": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/DependencyRestore.js",
     "process-samples": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/SamplesProcessor.js",
     "restore-samples": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/SamplesRestore.js"
+  },
+  "unityDependencies": {
+    "com.mackysoft.serializereference-extensions": "1.1.7"
   },
   "author": {
     "name": "Burning-Lab",

@@ -1,0 +1,16 @@
+{
+    "name": "Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo",
+    "rootNamespace": "",
+    "references": [
+        "GUID:dc1297119490328419e602950aa1215a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
