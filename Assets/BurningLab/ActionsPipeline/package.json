@@ -1,18 +1,18 @@
 ﻿{
-  "name": "com.burning-lab.packagename",
+  "name": "com.burning-lab.actionspipeline",
   "version": "0.0.1",
-  "displayName": "Package Display Name",
-  "description": "Package description",
+  "displayName": "Actions Pipeline Engine",
+  "description": "An action pipeline management system for unity projects.",
   "unity": "2021.3",
   "documentationUrl": "",
-  "changelogUrl": "",
+  "changelogUrl": "https://github.com/burning-laboratory/unity-actions-pipeline/releases",
   "licensesUrl": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/burning-laboratory/unity-actions-pipeline"
   },
   "keywords": [
-
+    "Unity", "Actions", "Pipeline"
   ],
   "scripts": {
     "build": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/ReadmeBuilder.js",
@@ -24,11 +24,21 @@
     "process-samples": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/SamplesProcessor.js",
     "restore-samples": "node ./node_modules/com.burning-lab.utils.js-build-utils/Bin/SamplesRestore.js"
   },
+  "unityDependencies": {
+    "com.mackysoft.serializereference-extensions": "1.1.7"
+  },
   "author": {
     "name": "Burning-Lab",
     "email": "packages.support@burning-lab.com",
     "url": "https://burning-lab.com"
   },
+  "samples": [
+    {
+      "displayName": "Application Loader Demo",
+      "description": "Actions pipeline demo with application loader implementation case.",
+      "path": "Samples~/Simple App Loader Demo"
+    }
+  ],
   "devDependencies": {
     "com.burning-lab.utils.js-build-utils": "^0.1.10"
   }

@@ -1,0 +1,68 @@
+{
+    "buildsDirectory": "Builds",
+    "addressableContent": {
+        "_expanded": false,
+        "buildAddressableContent": false,
+        "settingsAssetPath": "",
+        "profileName": "",
+        "buildScript": ""
+    },
+    "configurations": [
+        {
+            "name": "Development Build",
+            "outputFolder": "Android",
+            "artifactName": "Custom Actions Pipeline.apk",
+            "buildTarget": 13,
+            "developmentBuild": true,
+            "autoConnectProfiler": false,
+            "deepProfiling": false,
+            "scriptDebugging": false,
+            "waitForManagedDebugger": false,
+            "scriptsOnlyBuild": false,
+            "compressionMethod": 0,
+            "il2CppCodeGeneration": 0,
+            "scenes": [
+                {
+                    "name": "App Preloader",
+                    "path": "Assets/BurningLab/ActionsPipeline/Samples/Simple App Loader Demo/Scenes/App Preloader.unity",
+                    "guid": "163dfa0f42abdf24ca8bb474403c0f43"
+                },
+                {
+                    "name": "Database",
+                    "path": "Assets/BurningLab/ActionsPipeline/Samples/Simple App Loader Demo/Scenes/Database.unity",
+                    "guid": "d2aa096029da48c428d1341b69a4feb2"
+                },
+                {
+                    "name": "Main",
+                    "path": "Assets/BurningLab/ActionsPipeline/Samples/Simple App Loader Demo/Scenes/Main.unity",
+                    "guid": "098b2926e6d742947b8fbe2af3a72fce"
+                }
+            ],
+            "defines": [
+                "DEBUG_BURNING_LAB_SDK",
+                "DEBUG_PROJECT_BUILDER"
+            ],
+            "standaloneSubtarget": 0,
+            "standaloneCopyPdbFiles": false,
+            "standaloneCreateVisualStudioSolution": false,
+            "standaloneCreateXCodeProject": false,
+            "standaloneXCodeBuildConfig": 0,
+            "androidSubtarget": 0,
+            "androidETC2Fallback": 0,
+            "exportAsAndroidStudioProject": false,
+            "androidCreateSymbols": 0,
+            "symlinkSources": false,
+            "buildAndroidAppBundle": false,
+            "webGLTextureSubtarget": 0,
+            "webGlCodeOptimization": 0,
+            "iosXCodeBuildConfig": 0,
+            "companyName": "BurningLab",
+            "productName": "actionspipeline",
+            "productVersion": "1.0",
+            "applicationIdentifier": "com.burninglab.actionspipeline",
+            "androidBundleVersionCode": 1,
+            "androidMinimumSdkVersion": 0,
+            "androidTargetSdkVersion": 0
+        }
+    ]
+}
