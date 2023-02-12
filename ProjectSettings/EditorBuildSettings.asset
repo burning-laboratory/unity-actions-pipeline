@@ -6,6 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BurningLab/ActionsPipeline/Samples/Simple App Loader Demo/Scenes/Burning-Lab
+      Logo.unity
+    guid: d470f08287fe63e4f8ec2df26da11962
+  - enabled: 1
     path: Assets/BurningLab/ActionsPipeline/Samples/Simple App Loader Demo/Scenes/App
       Preloader.unity
     guid: 163dfa0f42abdf24ca8bb474403c0f43

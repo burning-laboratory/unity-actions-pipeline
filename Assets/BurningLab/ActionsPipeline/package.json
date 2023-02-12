@@ -2,10 +2,10 @@
   "name": "com.burning-lab.actionspipeline",
   "version": "0.0.1",
   "displayName": "Actions Pipeline Engine",
-  "description": "",
+  "description": "An action pipeline management system for unity projects.",
   "unity": "2021.3",
   "documentationUrl": "",
-  "changelogUrl": "",
+  "changelogUrl": "https://github.com/burning-laboratory/unity-actions-pipeline/releases",
   "licensesUrl": "",
   "repository": {
     "type": "git",
@@ -32,6 +32,13 @@
     "email": "packages.support@burning-lab.com",
     "url": "https://burning-lab.com"
   },
+  "samples": [
+    {
+      "displayName": "Application Loader Demo",
+      "description": "Actions pipeline demo with application loader implementation case.",
+      "path": "Samples~/Simple App Loader Demo"
+    }
+  ],
   "devDependencies": {
     "com.burning-lab.utils.js-build-utils": "^0.1.10"
   }

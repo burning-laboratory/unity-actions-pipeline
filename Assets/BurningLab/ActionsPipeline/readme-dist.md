@@ -3,7 +3,7 @@
 </p>
 
 <p>
-    <img src="https://build.burning-lab.com/app/rest/builds/id=buildType:UnitySwipeInput_DevelopmentBuild/statusIcon.png" alt="Build Status">
+    <img src="https://build.burning-lab.com/app/rest/builds/buildType:id:UnityAssets_ComBurningLabActionspipeline_DevelopmentBuild/statusIcon.png" alt="Build Status">
     <a href="https://n-fridman.myjetbrains.com/youtrack/agiles/121-18/current"><img src="https://img.shields.io/badge/Roadmap-YouTrack-orange" alt="Roadmap Link"></a>
     <img src="https://img.shields.io/badge/Engine-{unity_version}-blueviolet" alt="Unity Version">
     <img src="https://img.shields.io/badge/Version-{package_version}-blue" alt="Game Version">

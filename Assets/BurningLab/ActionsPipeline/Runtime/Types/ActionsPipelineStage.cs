@@ -13,6 +13,13 @@ namespace BurningLab.ActionsPipeline
         
         [Tooltip("Actions pipeline stage name.")]
         [SerializeField] protected string _stageName;
+
+        [Tooltip("If enabled, the passage of this stage is taken into account in the overall progress of the pipeline.")]
+        [SerializeField] private bool _includeForProgressComputing;
+        
+        public string StageName => _stageName;
+
+        public bool IncludeForProgressComputing => _includeForProgressComputing;
         
         #endregion
 

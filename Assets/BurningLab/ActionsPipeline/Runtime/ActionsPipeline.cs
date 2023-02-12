@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BurningLab.ActionsPipeline
@@ -25,6 +26,34 @@ namespace BurningLab.ActionsPipeline
 
         #endregion
 
+        #region Public Fields
+        
+        /// <summary>
+        /// Stages count in actions pipeline.
+        /// </summary>
+        public int StagesCount => _pipelineStages.Count;
+
+        /// <summary>
+        /// Actions pipeline complete progress.
+        /// </summary>
+        public float Progress
+        {
+            get
+            {
+                float startStagesCount = _pipelineStages.Count(s => s.IncludeForProgressComputing);
+                float leftStagesCount = _pipelineStagesQueue.Count(s => s.IncludeForProgressComputing);
+                float completedStagesCount = startStagesCount - leftStagesCount;
+                return completedStagesCount / startStagesCount;
+            }
+        }
+        
+        /// <summary>
+        /// Actions pipeline is done.
+        /// </summary>
+        public bool IsDone => _pipelineStagesQueue.Count == 0;
+
+        #endregion
+        
         #region Events
         
         /// <summary>
