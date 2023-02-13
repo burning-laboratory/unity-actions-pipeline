@@ -9,7 +9,7 @@ namespace BurningLab.ActionsPipeline
     /// Actions pipeline structure.
     /// </summary>
     [Serializable]
-    public struct ActionsPipeline
+    public struct ActionPipeline
     {
         #region Settings
 
