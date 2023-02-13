@@ -5,7 +5,7 @@ using UnityEngine;
 public class AppLoader : MonoBehaviour
 {
     [Tooltip("Application loading pipeline.")]
-    [SerializeField] private ActionsPipeline _loadingPipeline;
+    [SerializeField] private ActionPipeline _loadingPipeline;
 
     public event Action<ActionsPipelineStage> OnStageChanged;
 
