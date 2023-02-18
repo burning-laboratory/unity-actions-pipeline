@@ -5,7 +5,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
 {
     [AddTypeMenu("App Loader Demo/Mark Scene As Active Stage")]
     [System.Serializable]
-    public class MarkSceneAsActiveActionPipelineStage : ActionsPipelineStage
+    public class MarkSceneAsActiveActionPipelineStage : ActionPipelineStage
     {
         [SerializeField] private string _sceneNameToMarkAsActive;
         

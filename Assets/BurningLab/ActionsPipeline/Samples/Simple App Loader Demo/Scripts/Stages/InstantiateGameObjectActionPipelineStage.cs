@@ -4,7 +4,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
 {
     [AddTypeMenu("App Loader Demo/Instantiate Game Object Stage")]
     [System.Serializable]
-    public class InstantiateGameObjectActionsPipelineStage : ActionsPipelineStage
+    public class InstantiateGameObjectActionPipelineStage : ActionPipelineStage
     {
         [SerializeField] private Transform _parentTransform;
         [SerializeField] private GameObject _prefab;

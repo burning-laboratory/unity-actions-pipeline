@@ -5,7 +5,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
 {
     [AddTypeMenu("App Loader Demo/Wait Any Button Click Stage")]
     [System.Serializable]
-    public class WaitAnyButtonClickActionsPipelineStage : ActionsPipelineStage
+    public class WaitAnyButtonClickActionPipelineStage : ActionPipelineStage
     {
         protected override void OnInit()
         {

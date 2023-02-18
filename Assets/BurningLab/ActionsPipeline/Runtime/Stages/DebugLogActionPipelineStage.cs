@@ -7,7 +7,7 @@ namespace BurningLab.ActionsPipeline.Stages
     /// </summary>
     [AddTypeMenu("Burning-Lab/Misc/Debug Log Stage")]
     [System.Serializable]
-    public class DebugLogActionsPipelineStage : ActionsPipelineStage
+    public class DebugLogActionPipelineStage : ActionPipelineStage
     {
         [SerializeField] private string _message;
         

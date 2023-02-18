@@ -7,7 +7,7 @@ namespace BurningLab.ActionsPipeline
     /// Root actions pipeline stage class.
     /// </summary>
     [Serializable]
-    public abstract class ActionsPipelineStage : IActionsPipelineStage
+    public abstract class ActionPipelineStage : IActionPipelineStage
     {
         #region Settings
         
@@ -62,12 +62,12 @@ namespace BurningLab.ActionsPipeline
         /// <summary>
         /// On stage started event.
         /// </summary>
-        public event Action<IActionsPipelineStage> OnStageStarted;
+        public event Action<IActionPipelineStage> OnStageStarted;
         
         /// <summary>
         /// On stage end event.
         /// </summary>
-        public event Action<IActionsPipelineStage, ActionsPipelineStageResult> OnStageEnd;
+        public event Action<IActionPipelineStage, ActionsPipelineStageResult> OnStageEnd;
 
         #endregion
 

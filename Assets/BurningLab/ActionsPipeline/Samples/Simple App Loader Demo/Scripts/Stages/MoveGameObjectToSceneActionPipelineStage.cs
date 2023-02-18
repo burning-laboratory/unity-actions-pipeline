@@ -5,7 +5,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
 {
     [AddTypeMenu("App Loader Demo/Move Game Object To Scene Stage")]
     [System.Serializable]
-    public class MoveGameObjectToSceneActionPipelineStage : ActionsPipelineStage
+    public class MoveGameObjectToSceneActionPipelineStage : ActionPipelineStage
     {
         [Tooltip("Game object for move.")]
         [SerializeField] private GameObject _gameObject;
