@@ -8,7 +8,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
     /// </summary>
     [AddTypeMenu("App Loader Demo/Load Scene Stage")]
     [System.Serializable]
-    public class LoadSceneActionsPipelineStage : ActionsPipelineStage
+    public class LoadSceneActionPipelineStage : ActionPipelineStage
     {
         [SerializeField] private string _sceneName;
 

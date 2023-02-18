@@ -7,7 +7,7 @@ public class AppLoader : MonoBehaviour
     [Tooltip("Application loading pipeline.")]
     [SerializeField] private ActionPipeline _loadingPipeline;
 
-    public event Action<ActionsPipelineStage> OnStageChanged;
+    public event Action<ActionPipelineStage> OnStageChanged;
 
     public float LoadingProgress => _loadingPipeline.Progress;
     
@@ -23,7 +23,7 @@ public class AppLoader : MonoBehaviour
         _loadingPipeline.OnPipelineStageStart -= OnStageStartEventHandler;
     }
 
-    private void OnStageStartEventHandler(ActionsPipelineStage sender)
+    private void OnStageStartEventHandler(ActionPipelineStage sender)
     {
         OnStageChanged?.Invoke(sender);
     }

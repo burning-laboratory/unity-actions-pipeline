@@ -5,7 +5,7 @@ namespace BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stag
 {
     [AddTypeMenu("App Loader Demo/Unload Scene Stage")]
     [System.Serializable]
-    public class UnloadSceneActionsPipelineStage : ActionsPipelineStage
+    public class UnloadSceneActionPipelineStage : ActionPipelineStage
     {
         [SerializeField] private string _sceneNameToUnload;
 

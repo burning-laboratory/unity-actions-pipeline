@@ -17,7 +17,7 @@ public class CurrentStageNameDrawer : MonoBehaviour
         _appLoader.OnStageChanged += OnAppLoaderStageChangedEventHandler;
     }
 
-    private void OnAppLoaderStageChangedEventHandler(ActionsPipelineStage obj)
+    private void OnAppLoaderStageChangedEventHandler(ActionPipelineStage obj)
     {
         _titleText.SetText(obj.StageName);
         _slider.value = _appLoader.LoadingProgress;

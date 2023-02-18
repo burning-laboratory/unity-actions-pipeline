@@ -10,7 +10,7 @@ namespace BurningLab.ActionsPipeline.Stages
     /// </summary>
     [AddTypeMenu("Burning-Lab/Misc/Delay Stage")]
     [System.Serializable]
-    public class DelayActionsPipelineStage : ActionsPipelineStage
+    public class DelayActionPipelineStage : ActionPipelineStage
     {
         [Tooltip("Delay in seconds.")]
         [SerializeField] private float _secondsDelay;

@@ -1,12 +1,11 @@
 ﻿using System;
-using BurningLab.ActionsPipeline;
 
 namespace BurningLab.ActionsPipeline
 {
     /// <summary>
     /// Actions pipeline stage interface.
     /// </summary>
-    public interface IActionsPipelineStage
+    public interface IActionPipelineStage
     {
         #region Stage Initialization
 
@@ -36,12 +35,12 @@ namespace BurningLab.ActionsPipeline
         /// <summary>
         /// Stage started event.
         /// </summary>
-        public event Action<IActionsPipelineStage> OnStageStarted;
+        public event Action<IActionPipelineStage> OnStageStarted;
         
         /// <summary>
         /// Stage end event.
         /// </summary>
-        public event Action<IActionsPipelineStage, ActionsPipelineStageResult> OnStageEnd;
+        public event Action<IActionPipelineStage, ActionsPipelineStageResult> OnStageEnd;
 
         #endregion
     }

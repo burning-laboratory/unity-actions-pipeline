@@ -13,7 +13,7 @@ namespace BurningLab.ActionsPipeline
     {
         #region Settings
 
-        [SerializeReference, SubclassSelector] private List<ActionsPipelineStage> _pipelineStages;
+        [SerializeReference, SubclassSelector] private List<ActionPipelineStage> _pipelineStages;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace BurningLab.ActionsPipeline
         /// <summary>
         /// Actions pipeline stages queue.
         /// </summary>
-        private Queue<ActionsPipelineStage> _pipelineStagesQueue;
+        private Queue<ActionPipelineStage> _pipelineStagesQueue;
 
         #endregion
 
@@ -59,17 +59,17 @@ namespace BurningLab.ActionsPipeline
         /// <summary>
         /// On actions pipeline complete event.
         /// </summary>
-        public event Action OnPipelineComplete;
+        public event Action<ActionPipelineResult> OnPipelineComplete;
         
         /// <summary>
         /// On actions pipeline stage start event.
         /// </summary>
-        public event Action<ActionsPipelineStage> OnPipelineStageStart;
+        public event Action<ActionPipelineStage> OnPipelineStageStart;
         
         /// <summary>
         /// On actions pipeline stave complete event.
         /// </summary>
-        public event Action<ActionsPipelineStage> OnPipelineStageEnd; 
+        public event Action<ActionPipelineStage> OnPipelineStageEnd; 
 
         #endregion
 
@@ -80,30 +80,29 @@ namespace BurningLab.ActionsPipeline
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="result">Sender stage result.</param>
-        private void OnActionsPipelineStageEndEventHandler(IActionsPipelineStage sender, ActionsPipelineStageResult result)
+        private void OnActionsPipelineStageEndEventHandler(IActionPipelineStage sender, ActionsPipelineStageResult result)
         {
-            OnPipelineStageEnd?.Invoke((ActionsPipelineStage) sender);
+            OnPipelineStageEnd?.Invoke((ActionPipelineStage) sender);
             sender.DeInit();
             sender.OnStageEnd -= OnActionsPipelineStageEndEventHandler;
 
             switch (result)
             {
                 case ActionsPipelineStageResult.Success:
+                case ActionsPipelineStageResult.Skipped:
                     if (_pipelineStagesQueue.Count != 0)
                     {
-                        IActionsPipelineStage nextStage = _pipelineStagesQueue.Dequeue();
-                        RunStage((ActionsPipelineStage) nextStage);
+                        IActionPipelineStage nextStage = _pipelineStagesQueue.Dequeue();
+                        RunStage((ActionPipelineStage) nextStage);
                     }
                     else
                     {
-                        OnPipelineComplete?.Invoke();
+                        OnPipelineComplete?.Invoke(ActionPipelineResult.Success);
                     }
                     break;
                 
                 case ActionsPipelineStageResult.Error:
-                    break;
-                
-                case ActionsPipelineStageResult.Skipped:
+                    OnPipelineComplete?.Invoke(ActionPipelineResult.Error);
                     break;
             }
         }
@@ -116,7 +115,7 @@ namespace BurningLab.ActionsPipeline
         /// Run pipeline stage.
         /// </summary>
         /// <param name="stage">Stage to run.</param>
-        private void RunStage(ActionsPipelineStage stage)
+        private void RunStage(ActionPipelineStage stage)
         {
             stage.OnStageEnd += OnActionsPipelineStageEndEventHandler;
             stage.Init();
@@ -133,9 +132,9 @@ namespace BurningLab.ActionsPipeline
         /// </summary>
         public void RunPipeline()
         {
-            _pipelineStagesQueue ??= new Queue<ActionsPipelineStage>();
+            _pipelineStagesQueue ??= new Queue<ActionPipelineStage>();
             
-            foreach (ActionsPipelineStage pipelineStage in _pipelineStages)
+            foreach (ActionPipelineStage pipelineStage in _pipelineStages)
                 _pipelineStagesQueue.Enqueue(pipelineStage);
             
             RunStage(_pipelineStagesQueue.Dequeue());
