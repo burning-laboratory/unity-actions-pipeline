@@ -6,7 +6,8 @@
   "unity": "2021.3",
   "documentationUrl": "",
   "changelogUrl": "https://github.com/burning-laboratory/unity-actions-pipeline/releases",
-  "licensesUrl": "",
+  "licensesUrl": "https://github.com/burning-laboratory/unity-actions-pipeline/blob/main/LICENSE.txt",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/burning-laboratory/unity-actions-pipeline"
