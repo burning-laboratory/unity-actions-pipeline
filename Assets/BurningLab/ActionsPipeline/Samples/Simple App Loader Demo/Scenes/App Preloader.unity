@@ -906,10 +906,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingPipeline:
-    _pipelineStages: []
+    _pipelineStages:
+    - rid: 8033985643330928643
+    - rid: 8033985643330928641
+    - rid: 8033985643330928644
+    - rid: 8033985643330928640
+    - rid: 8033985643330928642
+    - rid: 8033985643330928645
+    - rid: 8033985643330928646
+    - rid: 8033985643330928647
+    - rid: 8033985643330928648
+    - rid: 8033985643330928649
+    - rid: 8033985643330928650
+    - rid: 8033985643330928651
+    - rid: 8033985643330928652
+    - rid: 8033985643330928653
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8033985643330928640
+      type: {class: LoadSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Load database scene
+        _includeForProgressComputing: 1
+        _sceneName: Database
+    - rid: 8033985643330928641
+      type: {class: MarkGameObjectAsDontDestroyOnLoadActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Mark app loader as dont desctroy on load
+        _includeForProgressComputing: 1
+        _targetGameObject: {fileID: 1525510190}
+    - rid: 8033985643330928642
+      type: {class: LoadSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Load main scene
+        _includeForProgressComputing: 1
+        _sceneName: Main
+    - rid: 8033985643330928643
+      type: {class: DelayActionPipelineStage, ns: BurningLab.ActionsPipeline.Stages, asm: Burning-Lab.ActionsPipeline}
+      data:
+        _stageName: Delay before load
+        _includeForProgressComputing: 1
+        _secondsDelay: 1
+    - rid: 8033985643330928644
+      type: {class: DelayActionPipelineStage, ns: BurningLab.ActionsPipeline.Stages, asm: Burning-Lab.ActionsPipeline}
+      data:
+        _stageName: Marked delay
+        _includeForProgressComputing: 1
+        _secondsDelay: 1
+    - rid: 8033985643330928645
+      type: {class: MoveGameObjectToSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Move main camera to main scene
+        _includeForProgressComputing: 1
+        _gameObject: {fileID: 255275988}
+        _targetSceneName: Main
+    - rid: 8033985643330928646
+      type: {class: MoveGameObjectToSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Move event system to main scene
+        _includeForProgressComputing: 1
+        _gameObject: {fileID: 787575588}
+        _targetSceneName: Main
+    - rid: 8033985643330928647
+      type: {class: DelayActionPipelineStage, ns: BurningLab.ActionsPipeline.Stages, asm: Burning-Lab.ActionsPipeline}
+      data:
+        _stageName: After load delay
+        _includeForProgressComputing: 1
+        _secondsDelay: 2
+    - rid: 8033985643330928648
+      type: {class: DestroyGameObjectActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Destroy progress bar
+        _includeForProgressComputing: 0
+        _gameObjectToDestroy: {fileID: 942182905}
+    - rid: 8033985643330928649
+      type: {class: InstantiateGameObjectActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Instantiate tap to continue
+        _includeForProgressComputing: 0
+        _parentTransform: {fileID: 544854861}
+        _prefab: {fileID: 7802161120339393965, guid: c0f5ff5ff65fb0c45a17cf36b94f17c1, type: 3}
+    - rid: 8033985643330928650
+      type: {class: WaitAnyButtonClickActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Wait any button click stage
+        _includeForProgressComputing: 0
+    - rid: 8033985643330928651
+      type: {class: MarkSceneAsActiveActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Mark main scene as active
+        _includeForProgressComputing: 0
+        _sceneNameToMarkAsActive: Main
+    - rid: 8033985643330928652
+      type: {class: UnloadSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Unload app preloader scene
+        _includeForProgressComputing: 0
+        _sceneNameToUnload: App Preloader
+    - rid: 8033985643330928653
+      type: {class: DestroyGameObjectActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
+      data:
+        _stageName: Destroy app loader game object
+        _includeForProgressComputing: 0
+        _gameObjectToDestroy: {fileID: 1525510190}
 --- !u!4 &1525510192
 Transform:
   m_ObjectHideFlags: 0
