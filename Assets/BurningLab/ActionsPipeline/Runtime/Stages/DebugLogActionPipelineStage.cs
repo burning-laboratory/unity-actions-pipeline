@@ -5,7 +5,7 @@ namespace BurningLab.ActionsPipeline.Stages
     /// <summary>
     /// Print message to unity console stage.
     /// </summary>
-    [AddTypeMenu("Burning-Lab/Misc/Debug Log Stage")]
+    [AddTypeMenu("Misc/Debug Log Stage")]
     [System.Serializable]
     public class DebugLogActionPipelineStage : ActionPipelineStage
     {
