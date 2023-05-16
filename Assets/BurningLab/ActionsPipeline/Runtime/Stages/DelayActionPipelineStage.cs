@@ -8,7 +8,7 @@ namespace BurningLab.ActionsPipeline.Stages
     /// <summary>
     /// Delay actions pipeline stage.
     /// </summary>
-    [AddTypeMenu("Burning-Lab/Misc/Delay Stage")]
+    [AddTypeMenu("Misc/Delay Stage")]
     [System.Serializable]
     public class DelayActionPipelineStage : ActionPipelineStage
     {
