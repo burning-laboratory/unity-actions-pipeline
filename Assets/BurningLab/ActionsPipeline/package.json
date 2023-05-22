@@ -1,6 +1,6 @@
 {
    "name": "com.burning-lab.actionspipeline",
-   "version": "1.0.3",
+   "version": "1.0.4",
    "displayName": "Actions Pipeline Engine",
    "description": "An action pipeline management system for unity projects.",
    "unity": "2021.3",
