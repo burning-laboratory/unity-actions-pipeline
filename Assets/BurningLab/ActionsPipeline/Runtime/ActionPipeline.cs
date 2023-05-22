@@ -136,6 +136,12 @@ namespace BurningLab.ActionsPipeline
             
             foreach (ActionPipelineStage pipelineStage in _pipelineStages)
                 _pipelineStagesQueue.Enqueue(pipelineStage);
+
+            if (_pipelineStagesQueue.Count == 0)
+            {
+                OnPipelineComplete?.Invoke(ActionPipelineResult.Success);
+                return;
+            }
             
             RunStage(_pipelineStagesQueue.Dequeue());
         }
