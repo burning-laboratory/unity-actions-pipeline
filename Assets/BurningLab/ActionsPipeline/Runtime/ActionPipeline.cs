@@ -93,6 +93,10 @@ namespace BurningLab.ActionsPipeline
 
             switch (result)
             {
+                case ActionsPipelineStageResult.Cancelled:
+                    OnPipelineComplete?.Invoke(ActionPipelineResult.Cancelled);
+                    break;
+                
                 case ActionsPipelineStageResult.Success:
                 case ActionsPipelineStageResult.Skipped:
                     if (_pipelineStagesQueue.Count != 0)
@@ -109,10 +113,6 @@ namespace BurningLab.ActionsPipeline
                 case ActionsPipelineStageResult.Error:
                     OnPipelineComplete?.Invoke(ActionPipelineResult.Error);
                     break;
-                
-                case ActionsPipelineStageResult.Cancelled:
-                    OnPipelineComplete?.Invoke(ActionPipelineResult.Cancelled);
-                    break;
             }
         }
 
@@ -126,6 +126,8 @@ namespace BurningLab.ActionsPipeline
         /// <param name="stage">Stage to run.</param>
         private void RunStage(ActionPipelineStage stage)
         {
+            _activeStage = stage;
+            
             stage.OnStageEnd += OnActionsPipelineStageEndEventHandler;
             stage.Init();
             OnPipelineStageStart?.Invoke(stage);
@@ -142,6 +144,9 @@ namespace BurningLab.ActionsPipeline
         public void RunPipeline()
         {
             _pipelineStagesQueue ??= new Queue<ActionPipelineStage>();
+
+            if (_pipelineStages.Count == 0)
+                return;
             
             foreach (ActionPipelineStage pipelineStage in _pipelineStages)
                 _pipelineStagesQueue.Enqueue(pipelineStage);
@@ -153,6 +158,15 @@ namespace BurningLab.ActionsPipeline
             }
             
             RunStage(_pipelineStagesQueue.Dequeue());
+        }
+
+        public void Cancel()
+        {
+            if (_activeStage != null)
+                _activeStage.Cancel();
+
+            if (_pipelineStagesQueue.Count != 0)
+                _pipelineStagesQueue.Clear();
         }
 
         #endregion

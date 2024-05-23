@@ -99,7 +99,10 @@ namespace BurningLab.ActionsPipeline
         /// <summary>
         /// Handle a cancel action pipeline called.
         /// </summary>
-        protected virtual void OnCancel(){ }
+        protected virtual void OnCancel()
+        {
+            Next(ActionsPipelineStageResult.Cancelled);
+        }
         
         #endregion
     }

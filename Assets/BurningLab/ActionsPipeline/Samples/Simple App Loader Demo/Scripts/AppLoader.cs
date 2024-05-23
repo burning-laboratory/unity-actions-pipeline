@@ -17,6 +17,12 @@ public class AppLoader : MonoBehaviour
         _loadingPipeline.OnPipelineStageStart += OnStageStartEventHandler;
         _loadingPipeline.RunPipeline();
     }
+
+    [ContextMenu("Cancel Load")]
+    public void CancelPipeline()
+    {
+        _loadingPipeline.Cancel();
+    }
     
     private void OnDestroy()
     {
