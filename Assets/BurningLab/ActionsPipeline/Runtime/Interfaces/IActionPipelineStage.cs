@@ -27,7 +27,12 @@ namespace BurningLab.ActionsPipeline
         /// Run actions pipeline stage.
         /// </summary>
         public void Start();
-
+        
+        /// <summary>
+        /// Cancel action pipeline stage.
+        /// </summary>
+        public void Cancel();
+        
         #endregion
 
         #region Stage Events

@@ -14,5 +14,10 @@
         /// Action pipeline complete with errors.
         /// </summary>
         Error = 1,
+        
+        /// <summary>
+        /// Action pipeline is cancelled.
+        /// </summary>
+        Cancelled = 2
     }
 }

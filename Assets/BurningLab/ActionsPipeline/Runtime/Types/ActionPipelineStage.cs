@@ -51,6 +51,14 @@ namespace BurningLab.ActionsPipeline
         }
         
         /// <summary>
+        /// Cancel action pipeline stage.
+        /// </summary>
+        public void Cancel()
+        {
+            OnCancel();
+        }
+        
+        /// <summary>
         /// Call next stage.
         /// </summary>
         /// <param name="stageResult"></param>
@@ -88,6 +96,11 @@ namespace BurningLab.ActionsPipeline
         /// </summary>
         protected virtual void OnStart(){ }
 
+        /// <summary>
+        /// Handle a cancel action pipeline called.
+        /// </summary>
+        protected virtual void OnCancel(){ }
+        
         #endregion
     }
 }
