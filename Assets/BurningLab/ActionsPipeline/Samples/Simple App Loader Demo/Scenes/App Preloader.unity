@@ -956,7 +956,7 @@ MonoBehaviour:
       data:
         _stageName: Marked delay
         _includeForProgressComputing: 1
-        _secondsDelay: 1
+        _secondsDelay: 10
     - rid: 8033985643330928645
       type: {class: MoveGameObjectToSceneActionPipelineStage, ns: BurningLab.ActionsPipeline.Samples.Simple_App_Loader_Demo.Scripts.Stages, asm: Burning-Lab.ActionsPipeline.Samples.SimpleAppLoaderDemo}
       data:

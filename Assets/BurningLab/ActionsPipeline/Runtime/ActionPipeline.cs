@@ -93,6 +93,10 @@ namespace BurningLab.ActionsPipeline
 
             switch (result)
             {
+                case ActionsPipelineStageResult.Cancelled:
+                    OnPipelineComplete?.Invoke(ActionPipelineResult.Cancelled);
+                    break;
+                
                 case ActionsPipelineStageResult.Success:
                 case ActionsPipelineStageResult.Skipped:
                     if (_pipelineStagesQueue.Count != 0)
@@ -108,10 +112,6 @@ namespace BurningLab.ActionsPipeline
                 
                 case ActionsPipelineStageResult.Error:
                     OnPipelineComplete?.Invoke(ActionPipelineResult.Error);
-                    break;
-                
-                case ActionsPipelineStageResult.Cancelled:
-                    OnPipelineComplete?.Invoke(ActionPipelineResult.Cancelled);
                     break;
             }
         }
@@ -145,7 +145,7 @@ namespace BurningLab.ActionsPipeline
         {
             _pipelineStagesQueue ??= new Queue<ActionPipelineStage>();
 
-            if (_pipelineStagesQueue.Count == 0)
+            if (_pipelineStages.Count == 0)
                 return;
             
             foreach (ActionPipelineStage pipelineStage in _pipelineStages)
@@ -163,7 +163,10 @@ namespace BurningLab.ActionsPipeline
         public void Cancel()
         {
             if (_activeStage != null)
-                _activeStage.Cancel();   
+                _activeStage.Cancel();
+
+            if (_pipelineStagesQueue.Count != 0)
+                _pipelineStagesQueue.Clear();
         }
 
         #endregion
