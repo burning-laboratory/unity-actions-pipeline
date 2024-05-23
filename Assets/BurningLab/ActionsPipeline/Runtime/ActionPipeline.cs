@@ -24,6 +24,11 @@ namespace BurningLab.ActionsPipeline
         /// </summary>
         private Queue<ActionPipelineStage> _pipelineStagesQueue;
 
+        /// <summary>
+        /// Reference to current action pipeline stage.
+        /// </summary>
+        private ActionPipelineStage _activeStage;
+        
         #endregion
 
         #region Public Fields
@@ -103,6 +108,10 @@ namespace BurningLab.ActionsPipeline
                 
                 case ActionsPipelineStageResult.Error:
                     OnPipelineComplete?.Invoke(ActionPipelineResult.Error);
+                    break;
+                
+                case ActionsPipelineStageResult.Cancelled:
+                    OnPipelineComplete?.Invoke(ActionPipelineResult.Cancelled);
                     break;
             }
         }

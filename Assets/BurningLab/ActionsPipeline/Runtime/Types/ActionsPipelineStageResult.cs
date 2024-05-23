@@ -18,6 +18,11 @@
         /// <summary>
         /// Stage skipped.
         /// </summary>
-        Skipped = 2
+        Skipped = 2,
+        
+        /// <summary>
+        /// Action pipeline is cancelled.
+        /// </summary>
+        Cancelled = 3
     }
 }

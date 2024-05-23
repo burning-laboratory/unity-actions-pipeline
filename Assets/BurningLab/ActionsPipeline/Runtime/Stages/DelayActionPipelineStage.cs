@@ -34,7 +34,14 @@ namespace BurningLab.ActionsPipeline.Stages
             
             _cancellationToken.Cancel();
         }
-        
+
+        protected override void OnCancel()
+        {
+            base.OnCancel();
+            
+            _cancellationToken.Cancel();
+        }
+
         /// <summary>
         /// Delay methods.
         /// </summary>
@@ -49,7 +56,7 @@ namespace BurningLab.ActionsPipeline.Stages
             }
             catch (OperationCanceledException)
             {
-                Next(ActionsPipelineStageResult.Skipped);
+                Next(ActionsPipelineStageResult.Cancelled);
             }
         }
     }
